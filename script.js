@@ -5,7 +5,8 @@ document.getElementById("nameInput").addEventListener("submit", function(event) 
     const outputPara = document.getElementById("outputName");
 
     const userName = userInput.value;
-    outputPara.textContent = `${userName} ʔukʷaqiłs`;
+    outputPara.textContent = 
+    `${userName} ʔukʷaqiłs (u-kwa-qilths)`;
 });
 
 document.getElementById("homeInput").addEventListener("submit", function(event) {
@@ -15,7 +16,8 @@ document.getElementById("homeInput").addEventListener("submit", function(event) 
     const outputPara = document.getElementById("outputHome");
 
     const userHome = userInput.value;
-    outputPara.textContent = `ʔiyax̣taqšiƛs ${userHome}`;
+    outputPara.textContent = 
+    `ʔiyax̣taqšiƛs (eeyax-taq-shitls) ${userHome}`;
 });
 
 document.getElementById("locationInput").addEventListener("submit", function(event) {
@@ -25,5 +27,20 @@ document.getElementById("locationInput").addEventListener("submit", function(eve
     const outputPara = document.getElementById("outputLocation");
 
     const userLocation = userInput.value;
-    outputPara.textContent = `ʔiyax̣aʔtax̣s ${userLocation}`;
+    outputPara.textContent = 
+    `ʔiyax̣aʔtax̣s (eeya-xa-taxs) ${userLocation}`;
 });
+
+
+
+
+// ---- practise input ----
+
+const textPractise = document.getElementById("practiseName");
+const practiseSubmit = document.getElementById("outputPractise");
+
+textPractise.addEventListener("change", updateValue);
+
+function updateValue(event) {
+    practiseSubmit.textContent = event.target.value;
+}
