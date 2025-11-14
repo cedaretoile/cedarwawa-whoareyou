@@ -2,6 +2,16 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+body {
+  background-color: lightsteelblue;
+  color: darkslategrey;
+}
+
+body.dark-mode {
+  background-color: #4663ac;
+  color: darkblue;
+}
+
 .center-box {
   display: flex;
   justify-content: center;
@@ -11,13 +21,12 @@
   width: 70%;
   margin: auto;
   border-radius: 80px;
-  background-color: white;
+  background-color: #d2deeb;
 }
 
 .container {
 display: flex;
 height: 100vh;
-  background-color: lightblue;
 }
 
 #langInput {

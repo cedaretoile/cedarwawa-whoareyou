@@ -1,3 +1,5 @@
+//---- introduction phrases ----
+
 document.getElementById("nameInput").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -32,9 +34,7 @@ document.getElementById("locationInput").addEventListener("submit", function(eve
 });
 
 
-
-
-// ---- practise input ----
+// ---- practise typing input ----
 
 const textPractise = document.getElementById("practiseName");
 const practiseSubmit = document.getElementById("outputPractise");
@@ -44,3 +44,36 @@ textPractise.addEventListener("change", updateValue);
 function updateValue(event) {
     practiseSubmit.textContent = event.target.value;
 }
+
+// ---- toggle colours ----
+
+const toggleBtn = document.getElementById('mode-toggle');
+const docBody = document.body;
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    docBody.classList.add('dark-mode');
+  } else {
+    docBody.classList.remove('dark-mode');
+  }
+};
+
+const mainTheme = localStorage.getItem('theme');
+if (mainTheme) {
+  applyTheme(mainTheme);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+
+  applyTheme('dark');
+} else {
+  applyTheme('light');
+};
+
+toggleBtn.addEventListener('click', () => {
+  if (docBody.classList.contains('dark-mode')) {
+    applyTheme('light');
+    localStorage.setItem('theme', 'light');
+  } else {
+    applyTheme('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
